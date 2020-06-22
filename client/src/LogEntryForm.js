@@ -25,6 +25,8 @@ const LogEntryForm = ({ location, onClose }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="entry-form">
       { error ? <h3 className="error">{error}</h3> : null }
+      <label htmlFor="apiKey">API Key</label>
+      <input type="password" name="apiKey" required ref={register} />
       <label htmlFor="title">Title</label>
       <input name="title" required ref={register} />
       <label htmlFor="comments">Comments</label>
@@ -35,7 +37,7 @@ const LogEntryForm = ({ location, onClose }) => {
       <input name="image" ref={register} />
       <label htmlFor="visitDate">Visit Date</label>
       <input name="visitDate" type="date" required ref={register} />
-      <button disable={loading}>{loading ? 'Loading...' : 'Create Entry'}</button>
+      <button disabled={loading}>{loading ? 'Loading...' : 'Create Entry'}</button>
     </form>
   )
 };
