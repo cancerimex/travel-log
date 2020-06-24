@@ -8,6 +8,14 @@ const requiredNumber = {
 };
 
 const logEntrySchema = new Schema({
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  },
+  visibility: {
+    type: String,
+    default: 'private'
+  },
   title: {
     type: String,
     required: true,
@@ -36,7 +44,8 @@ const logEntrySchema = new Schema({
     type: Date,
   },
 }, {
-  timestamps: true
+  timestamps: true,
+  toJSON: { virtuals: true },
 });
 
 const LogEntry = mongoose.model('LogEntry', logEntrySchema);

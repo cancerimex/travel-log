@@ -24,6 +24,10 @@ body {
   fill: #f05305;
 }
 
+marker.blue path {
+  fill: rgb(81, 255, 0);
+}
+
 .popup {
   width:40vw;
   padding: 1rem;
